@@ -1,15 +1,16 @@
-import { Context } from "@Database/Common/Context";
+import { PrismaClient } from "generated/prisma";
+import { Inversify } from "@Containers/Inversify";
 import { Seeder } from "@Database/Seeders/Seeder";
 
 import { AdminSeeder } from "@Database/Seeders/AdminSeeder";
 
-const adminSeeder = new AdminSeeder(Context);
+const prisma = Inversify.get(PrismaClient);
+
+const adminSeeder = new AdminSeeder(prisma);
 
 const SeedRunner = async (seeders: Seeder[]) => {
   for (const seeder of seeders) {
-    const name = seeder.getName();
     await seeder.seed();
-    console.log(`Seeder executed ${name}`);
   };
 };
 
