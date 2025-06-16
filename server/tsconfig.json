@@ -28,18 +28,9 @@
 
     "baseUrl": ".",
     "paths": {
-      "@Services/*": [
-        "src/Domain/Services/*",
-        "src/Infrastructure/Services/*",
-      ],
-
-      "@Repositories/*": [
-        "src/Domain/Repositories/*",
-        "src/Infrastructure/Repositories/*",
-      ],
- 
       "@Containers/*": ["src/Infrastructure/Containers/*"],
       "@Database/*": ["src/Infrastructure/Database/*"],
+      "@Services/*": ["src/Infrastructure/Services/*"],
       "@Configs/*": ["src/Infrastructure/Configs/*"],
 
       "@Controllers/*": ["src/Presentation/Controllers/*"],
